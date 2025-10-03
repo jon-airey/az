@@ -1,0 +1,8 @@
+# Ignore development params
+params.dev.json
+
+# Optional: ignore other common temp/build files
+*.log
+*.tmp
+*.swp
+
