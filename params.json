@@ -1,8 +1,8 @@
 {
-  "resourceGroupName": { "value": "rgai" },
+  "rgName": { "value": "rgai" },
   "location": { "value": "eastus" },
   "acrName": { "value": "rgaiAcr" },
   "aksName": { "value": "rgaiAks" },
-  "sshPublicKey": { "value": "ssh-rsa ..." },
-  "adminUserName": { "value": "" }
+  "maxPods": { "value": 30 },
+  "deployName": { "value": "sig-parser-deploy" }
 }
