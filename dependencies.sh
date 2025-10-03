@@ -17,13 +17,13 @@ az aks install-cli
 sudo apt install yq
 
 # docker – if you’re building images locally before pushing to ACR.
-<!-- sudo apt install -y docker.io
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER -->
+# sudo apt install -y docker.io
+# sudo systemctl enable --now docker
+# sudo usermod -aG docker $USER
 
-# had issues installing kubectl with az, this is manual way, also used snap
-<!-- VERSION=$(curl -Ls https://dl.k8s.io/release/stable.txt)
-curl -LO "https://dl.k8s.io/release/$VERSION/bin/linux/amd64/kubectl"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
-kubectl version --client -->
+# need kubectl had issues installing kubectl with az, this is manual way, also used snap
+# VERSION=$(curl -Ls https://dl.k8s.io/release/stable.txt)
+# curl -LO "https://dl.k8s.io/release/$VERSION/bin/linux/amd64/kubectl"
+# chmod +x kubectl
+# sudo mv kubectl /usr/local/bin/
+# kubectl version --client

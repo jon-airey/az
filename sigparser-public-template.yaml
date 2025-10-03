@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${APP_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+      - name: ${APP_NAME}
+        image: ${ACR_NAME}.azurecr.io/${DOCKER_IMGNAME}
+        ports:
+        - containerPort: 8080
+        env:
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: huggingface-secret
+              key: HF_TOKEN
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${APP_NAME}-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ${APP_NAME}
+  ports:
+    - protocol: TCP
+      port: 80       # external port
+      targetPort: 8080 # container port

@@ -86,7 +86,7 @@ spec:
     spec:
       containers:
       - name: $APP_NAME
-        image: $ACR_NAME.azurecr.io/$DOCKERIMGNAME
+        image: $ACR_NAME.azurecr.io/$DOCKER_IMGNAME
         ports:
         - containerPort: 80
         env:
